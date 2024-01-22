@@ -3,6 +3,7 @@ import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { HomeComponent } from "./Components/home/home.component";
 import { LoginComponent } from './Components/login/login.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[	
@@ -11,7 +12,8 @@ import { LoginComponent } from './Components/login/login.component';
       LoginComponent
    ],
     imports:[
-        BrowserModule
+        BrowserModule,
+        FormsModule
     ],
     bootstrap:[AppComponent]
 })
