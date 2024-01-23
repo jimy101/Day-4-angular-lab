@@ -3,10 +3,12 @@ export class Product{
     Name:string;
     Price:number;
     Img:string;
-    constructor(id:string,name:string,price:number,img:string){
+    rate:number
+    constructor(id:string,name:string,price:number,img:string,r:number){
         this.ID = id;
         this.Name = name;
         this.Price= price
         this.Img= img
+        this.rate= r
     }
 }

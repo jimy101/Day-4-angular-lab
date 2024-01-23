@@ -1,65 +1,14 @@
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-</nav>
-
+<app-nav></app-nav>
 <h1 [title]="title">Hello in {{title}}</h1>
-
-
-
-<h1 >Hello mr/ms {{Name}}</h1>
-<input type="text" #inp>
+<!-- <input type="text" #inp>
 <button  (click)="clicked(inp.value)">  Click me</button>
 
 <h1 [class.text-danger]="age>60" [class.text-success]="age<=60" >your are {{age}} years old</h1>
 <h3 *ngIf="age>60">Sorry you are too old  </h3>
 
-<input type="number" [(ngModel)]="age">
+<input type="number" [(ngModel)]="age"> -->
 
-<div class="row">
 
-    <div class="card col-4"  *ngFor="let item of p">
-        <div class="card-body">
-            <img [src]="item.Img" [alt]="item.Name" class="card-img-top" alt="...">
-            <h5 class="card-title">{{item.Name}}</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Price {{item.Price}}</h6>
-            <!-- <p class="card-text"></p> -->
-            
-        </div>
-    </div>
-</div> 
+<router-outlet></router-outlet>
 
-<!-- <app-home></app-home> -->
+<app-footer></app-footer>
