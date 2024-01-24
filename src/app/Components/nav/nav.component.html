@@ -15,13 +15,22 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" *ngIf="LoggedUser==null">
             <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Join US
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/login" routerLinkActive="active">Login</a></li>
               <li><a class="dropdown-item" routerLink="/register" routerLinkActive="active">Register</a></li>
+              </ul>
+          </li>
+          <li class="nav-item dropdown" *ngIf="LoggedUser != null">
+            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Welcome {{LoggedUser.name}}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+              <li><a class="dropdown-item" (click)="logOut()">LogOut</a></li>
               </ul>
           </li>
           <li class="nav-item">
