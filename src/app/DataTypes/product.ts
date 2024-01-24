@@ -12,3 +12,15 @@ export class Product{
         this.rate= r
     }
 }
+export interface IProduct{
+    _id:string
+    name:string
+    imgURL:string
+    price:number
+    quantity:number
+    categoryID?:number
+    colors?:string[]
+    status?:string
+    createdDate?:Date
+
+}

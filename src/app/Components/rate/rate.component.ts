@@ -7,10 +7,10 @@ import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 })
 export class RateComponent {
 @Input() val:number=0
-@Output() event:EventEmitter<string>= new EventEmitter<string>()
+@Output() event:EventEmitter<number>= new EventEmitter<number>()
 
 input(value:string){
   // console.log(value);
-  this.event.emit(value)
+  this.event.emit(parseInt( value))
 }
 }
