@@ -12,6 +12,9 @@ import { MoneyPipe } from "./pipes/money.pipe";
 import { RouterModule } from "@angular/router";
 import { routes } from "./app.routes";
 import { ProductsComponent } from "./Components/products/products.component";
+import { ProductListComponent } from "./Components/product-list/product-list.component";
+import { HttpClientModule } from "@angular/common/http";
+import { RegisterComponent } from "./Components/register/register.component";
 
 @NgModule({
     declarations:[	
@@ -21,12 +24,15 @@ import { ProductsComponent } from "./Components/products/products.component";
       FooterComponent,
       NavComponent,
       RateComponent,
-      ProductsComponent
+      ProductsComponent,
+      RegisterComponent,
+      ProductListComponent
    ],
     imports:[
         BrowserModule,
         FormsModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        HttpClientModule
     ],
     bootstrap:[AppComponent],
     providers:[
