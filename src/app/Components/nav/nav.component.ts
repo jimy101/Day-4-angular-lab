@@ -13,7 +13,13 @@ count=0
 cart=0
 constructor (private ProdServ:ProductListService,private cartServ:CartListService){
   this.count = this.ProdServ.Products.length
-  this.cart = this.cartServ.UserCart.length
+ let obj =  this.cartServ.CartSubject.subscribe((value)=>{
+    console.log(value);
+    this.cart = value.length
+    
+  })
+
+ 
 
 }
 

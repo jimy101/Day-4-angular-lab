@@ -6,7 +6,8 @@
             <h5 class="card-title">{{item.Name}}</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">Price {{item.Price | currency }}</h6>
             <app-rate [val]="item.rate"  ></app-rate>
-            
+            <button [routerLink]="['/details',item.ID]">See More</button>
+            <button (click)="add(item)">Add To Cart</button>
         </div>
     </div>
 </div> 
