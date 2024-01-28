@@ -19,6 +19,11 @@ GetAllProducts()
 GetProductByID(id:string){
  return this.Http.get<APIResult<IProduct>>(this.OriginalPath+"/product/"+id)
 }
+AddProduct(data: FormData)
+{
+ return this.Http.post<APIResult<any>>(this.OriginalPath+ "/product/add",data)
+}
+/////////////////////
 
 Register(User:IRegisterUser){
   return this.Http.post<APIResult<any>>(this.OriginalPath+"/user/register",User)

@@ -3,7 +3,7 @@ import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { HomeComponent } from "./Components/home/home.component";
 import { LoginComponent } from './Components/login/login.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./Components/footer/footer.component";
 import { NavComponent } from "./Components/nav/nav.component";
 import { RateComponent } from "./Components/rate/rate.component";
@@ -15,6 +15,8 @@ import { ProductsComponent } from "./Components/products/products.component";
 import { ProductListComponent } from "./Components/product-list/product-list.component";
 import { HttpClientModule } from "@angular/common/http";
 import { RegisterComponent } from "./Components/register/register.component";
+import { AddProductComponent } from "./Components/add-product/add-product.component";
+import { EditProductComponent } from "./Components/Edit-Product/Edit-Product.component";
 
 @NgModule({
     declarations:[	
@@ -26,13 +28,16 @@ import { RegisterComponent } from "./Components/register/register.component";
       RateComponent,
       ProductsComponent,
       RegisterComponent,
-      ProductListComponent
+      ProductListComponent,
+      AddProductComponent,
+      EditProductComponent
    ],
     imports:[
         BrowserModule,
         FormsModule,
         RouterModule.forRoot(routes),
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     bootstrap:[AppComponent],
     providers:[
