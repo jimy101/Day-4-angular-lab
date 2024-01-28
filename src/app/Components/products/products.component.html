@@ -1,0 +1,13 @@
+<div class="row">
+
+    <div class="card col-4"  *ngFor="let item of p">
+        <div class="card-body">
+            <img [src]="item.Img" [alt]="item.Name" class="card-img-top" alt="...">
+            <h5 class="card-title">{{item.Name}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Price {{item.Price | currency }}</h6>
+            <app-rate [val]="item.rate"  ></app-rate>
+            <button [routerLink]="['/details',item.ID]">See More</button>
+            <button (click)="add(item)">Add To Cart</button>
+        </div>
+    </div>
+</div> 

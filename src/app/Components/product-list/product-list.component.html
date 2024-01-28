@@ -1,0 +1,17 @@
+
+<div class="container">
+<button class="btn btn-outline-primary my-5" routerLink="/add-product">Create Product </button>
+    <div class="row">
+        <div class="card col-4"  *ngFor="let item of list">
+            <div class="card-body">
+            <img [src]="item.imgURL" [alt]="item.name" class="card-img-top" alt="...">
+            <h5 class="card-title">{{item.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Price {{item.price | currency }}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Available {{item.quantity }}</h6>
+            <button [routerLink]="['/details',item._id]">See More</button>
+            <button [routerLink]="['/edit-product',item._id]">Edit</button>
+            <!-- <button (click)="add(item)">Add To Cart</button> -->
+        </div>
+    </div>
+</div> 
+</div>

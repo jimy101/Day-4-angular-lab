@@ -1,0 +1,144 @@
+<div class="container">
+  <form [formGroup]="regForm" (ngSubmit)="Send()">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        [ngClass]="{
+      'is-invalid': regForm.controls['name'].invalid && regForm.controls['name'].touched,
+      'is-valid': regForm.controls['name'].valid && regForm.controls['name'].touched,
+      }"
+      />
+      <div
+        *ngIf="
+          regForm.controls['name'].invalid &&
+          regForm.controls['name'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span *ngIf="regForm.controls['name'].hasError('required')">
+          Please Provide a correct name
+        </span>
+        <span *ngIf="regForm.controls['name'].hasError('minlength')">
+          name must contain more than 4 letters.
+        </span>
+      </div>
+      <div
+        *ngIf="
+          regForm.controls['name'].valid &&
+          regForm.controls['name'].touched
+        "
+        class="valid-feedback"
+      >
+        Looks good!
+      </div>
+    </div>
+    <!-- phone -->
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="phoneNumber"
+       [ngClass]="{
+      'is-invalid': regForm.controls['phoneNumber'].invalid && regForm.controls['phoneNumber'].touched,
+      'is-valid': regForm.controls['phoneNumber'].valid && regForm.controls['phoneNumber'].touched,
+      }"
+      />
+      <div
+        *ngIf="
+          regForm.controls['phoneNumber'].invalid && regForm.controls['phoneNumber'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span *ngIf="regForm.controls['phoneNumber'].hasError('required')">
+          Please fill
+        </span>
+        <!-- <span *ngIf="regForm.controls['phoneNumber'].hasError('pattern')">
+          Please Provide a correct phoneNumber
+        </span> -->
+      </div>
+      <div
+        *ngIf="
+          regForm.controls['phoneNumber'].valid && regForm.controls['phoneNumber'].touched
+        "
+        class="valid-feedback"
+      >
+        Looks good!
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{
+      'is-invalid': regForm.controls['email'].invalid && regForm.controls['email'].touched,
+      'is-valid': regForm.controls['email'].valid && regForm.controls['email'].touched,
+      }"
+      />
+      <div
+        *ngIf="
+          regForm.controls['email'].invalid && regForm.controls['email'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span *ngIf="regForm.controls['email'].hasError('required')">
+          Please fill
+        </span>
+        <span *ngIf="regForm.controls['email'].hasError('pattern')">
+          Please Provide a correct email
+        </span>
+      </div>
+      <div
+        *ngIf="
+          regForm.controls['email'].valid && regForm.controls['email'].touched
+        "
+        class="valid-feedback"
+      >
+        Looks good!
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{
+      'is-invalid': regForm.controls['password'].invalid && regForm.controls['password'].touched,
+      'is-valid': regForm.controls['password'].valid && regForm.controls['password'].touched,
+      }"
+      />
+      <div
+        *ngIf="
+          regForm.controls['password'].invalid &&
+          regForm.controls['password'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span *ngIf="regForm.controls['password'].hasError('required')">
+          Please fill
+        </span>
+        <span *ngIf="regForm.controls['password'].hasError('pattern')">
+           password must contain upper and lower and numbers.
+        </span>
+      </div>
+      <div
+        *ngIf="
+          regForm.controls['password'].valid &&
+          regForm.controls['password'].touched
+        "
+        class="valid-feedback"
+      >
+        Looks good!
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="regForm.invalid" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<ng-container [ngSwitch]="val">
+    <span *ngSwitchCase="0">Not Reviwed Yet</span>
+    <span class="text-warning" *ngSwitchCase="1">*</span>
+    <span class="text-warning" *ngSwitchCase="2">**</span>
+    <span class="text-warning" *ngSwitchCase="3">***</span>
+    <span class="text-warning" *ngSwitchCase="4">****</span>
+    <span class="text-warning" *ngSwitchCase="5">*****</span>
+    <input type="number" #inp (keyup)="input(inp.value)">
+</ng-container>
+
+<!-- <></> -->

@@ -1,0 +1,92 @@
+<div class="container">
+<form [formGroup]="form" (ngSubmit)="send()">
+  <div class="mb-3">
+    <label class="form-label">Product Name</label>
+    <input type="text" formControlName="name" class="form-control"
+    [ngClass]="{
+      'is-invalid': form.controls['name'].invalid && form.controls['name'].touched,
+      'is-valid': form.controls['name'].valid && form.controls['name'].touched,
+      }" >
+    <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="invalid-feedback">
+      <span *ngIf="form.controls['name'].hasError('required')">
+        Please Provide a correct Product name
+      </span>
+      <span *ngIf="form.controls['name'].hasError('minlength')">
+        Product name must contain more than 3 letters.
+      </span>
+    </div>
+    <div *ngIf="form.controls['name'].valid && form.controls['name'].touched"  class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Product Price</label>
+    <input type="number" formControlName="price" class="form-control"  [ngClass]="{
+      'is-invalid': form.controls['price'].invalid && form.controls['price'].touched,
+      'is-valid': form.controls['price'].valid && form.controls['price'].touched,
+      }" >
+    <div *ngIf="form.controls['price'].invalid && form.controls['price'].touched" class="invalid-feedback">
+      <span *ngIf="form.controls['price'].hasError('required')">
+        Please Provide a correct Product Price
+      </span>
+      <span *ngIf="form.controls['price'].hasError('min')">
+        Product price must more than 10 pound.
+      </span>
+    </div>
+    <div *ngIf="form.controls['name'].valid && form.controls['name'].touched"  class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Product Quantity</label>
+    <input type="number" formControlName="quantity" class="form-control"  [ngClass]="{
+      'is-invalid': form.controls['quantity'].invalid && form.controls['quantity'].touched,
+      'is-valid': form.controls['quantity'].valid && form.controls['quantity'].touched,
+      }" >
+      <div *ngIf="form.controls['quantity'].invalid && form.controls['quantity'].touched" class="invalid-feedback">
+        <span *ngIf="form.controls['quantity'].hasError('required')">
+          Please Provide a correct Product quantity
+        </span>
+        <span *ngIf="form.controls['quantity'].hasError('min')">
+          Product quantity must be more than 1
+        </span>
+      </div>
+      <div *ngIf="form.controls['quantity'].valid && form.controls['quantity'].touched"  class="valid-feedback">
+        Looks good!
+      </div>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Product Description</label>
+    <textarea class="form-control" formControlName="description"
+    [ngClass]="{
+      'is-invalid': form.controls['description'].invalid && form.controls['description'].touched,
+      'is-valid': form.controls['description'].valid && form.controls['description'].touched,
+      }" 
+    ></textarea>
+    <div *ngIf="form.controls['description'].invalid && form.controls['description'].touched" class="invalid-feedback">
+      <span *ngIf="form.controls['description'].hasError('required')">
+        Please Provide a correct Product description
+      </span>
+      <span *ngIf="form.controls['description'].hasError('minlength')">
+        Product description must contain more than 10 letters.
+      </span>
+    </div>
+    <div *ngIf="form.controls['description'].valid && form.controls['description'].touched"  class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="">Product Image</label>
+    <input type="file" class="form-control"  #imginput (change)="chooseImage(imginput)"> 
+</div>
+<div class="mb-3" formArrayName="colors">
+  <label for="">Product Colors</label>
+  <div class="row" *ngFor="let item of colorArray.controls;let i= index">
+    <input type="color" [formControlName]="i" class="form-control col" > 
+    <button type="button" class="btn btn-danger col" (click)="removeColor(i)">X</button>
+  </div>
+  <button type="button" class="btn btn-primary col" (click)="addColor()">Add Color</button>
+</div>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Add Product</button>
+</form>
+</div>

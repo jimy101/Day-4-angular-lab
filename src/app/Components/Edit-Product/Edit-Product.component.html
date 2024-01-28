@@ -1,0 +1,125 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="edit()">
+    <div class="mb-3">
+      <label class="form-label">Product Name</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': form.controls['name'].invalid && form.controls['name'].touched,
+        'is-valid' : form.controls['name'].valid &&form.controls['name'].touched,
+    }"
+      />
+      <div
+        *ngIf="
+          form.controls['name'].valid &&
+          form.controls['name'].touched
+        "
+        class="valid-feedback"
+      >
+        <span> All Good </span>
+      </div>
+      <div
+        *ngIf="
+          form.controls['name'].invalid &&
+          form.controls['name'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span> must be more than 3 characters </span>
+      </div>
+    </div>
+    <!-- price  -->
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input
+        type="text"
+        formControlName="price"
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': form.controls['price'].invalid && form.controls['price'].touched,
+        'is-valid' : form.controls['price'].valid &&form.controls['price'].touched,
+    }"
+      />
+      <div
+        *ngIf="form.controls['price'].valid && form.controls['price'].touched"
+        class="valid-feedback"
+      >
+        <span> All Good </span>
+      </div>
+      <div
+        *ngIf="form.controls['price'].invalid && form.controls['price'].touched"
+        class="invalid-feedback"
+      >
+        <span> must be more than 3 characters </span>
+      </div>
+    </div>
+    <!-- quantity -->
+    <div class="mb-3">
+      <label class="form-label">quantity</label>
+      <input
+        type="text"
+        formControlName="quantity"
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': form.controls['quantity'].invalid && form.controls['quantity'].touched,
+        'is-valid' : form.controls['quantity'].valid &&form.controls['quantity'].touched,
+    }"
+      />
+      <div
+        *ngIf="
+          form.controls['quantity'].valid && form.controls['quantity'].touched
+        "
+        class="valid-feedback"
+      >
+        <span> All Good </span>
+      </div>
+      <div
+        *ngIf="
+          form.controls['quantity'].invalid && form.controls['quantity'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span> must be more than 3 characters </span>
+      </div>
+    </div>
+    <!-- description -->
+    <div class="mb-3">
+      <label class="form-label">description</label>
+      <input
+        type="text"
+        formControlName="description"
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': form.controls['description'].invalid && form.controls['description'].touched,
+        'is-valid' : form.controls['description'].valid &&form.controls['description'].touched,
+    }"
+      />
+      <div
+        *ngIf="
+          form.controls['description'].valid &&
+          form.controls['description'].touched
+        "
+        class="valid-feedback"
+      >
+        <span> All Good </span>
+      </div>
+      <div
+        *ngIf="
+          form.controls['description'].invalid &&
+          form.controls['description'].touched
+        "
+        class="invalid-feedback"
+      >
+        <span> must be more than 3 characters </span>
+      </div>
+    </div>
+    <!-- button -->
+    <button type="submit" [disabled]="form.invalid" class="btn btn-success">
+      Edit Product
+    </button>
+  </form>
+</div>
+
+<h1>gjkkkkkkkk</h1>
