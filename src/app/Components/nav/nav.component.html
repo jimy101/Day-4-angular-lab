@@ -20,8 +20,8 @@
               Join US
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="['/login','/home']" routerLinkActive="active">Login</a></li>
-              <li><a class="dropdown-item" routerLink="/register" routerLinkActive="active">Register</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/account/login','/home']" routerLinkActive="active">Login</a></li>
+              <li><a class="dropdown-item" routerLink="/account/register" routerLinkActive="active">Register</a></li>
               </ul>
           </li>
           <li class="nav-item dropdown" *ngIf="LoggedUser != null">
