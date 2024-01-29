@@ -20,7 +20,7 @@
               Join US
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/login" routerLinkActive="active">Login</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/login','/home']" routerLinkActive="active">Login</a></li>
               <li><a class="dropdown-item" routerLink="/register" routerLinkActive="active">Register</a></li>
               </ul>
           </li>
@@ -35,6 +35,9 @@
           </li>
           <li class="nav-item">
             <p>Cart {{cart}}</p>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/wishlist">WishList</a>
           </li>
         </ul>
         <!-- <div class="d-flex">

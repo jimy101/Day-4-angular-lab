@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Product } from './DataTypes/product';
 import { ProductListService } from './Services/product-list.service';
 import { MoneyPipe } from './pipes/money.pipe';
+import { LoaderService } from './Services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -13,27 +14,13 @@ import { MoneyPipe } from './pipes/money.pipe';
 })
 export class AppComponent {
   title = 'mearn-app';
-  Name = '';
-  age=18
-  p:Product[]
-  // prdServ:ProductListService;
+  toLoad=false
+  constructor(private loaderServ:LoaderService){
 
-  constructor(private _prdServ:ProductListService){
-    // this.prdServ = _prdServ
-    this.p = _prdServ.Products
-
+this.loaderServ.isLoaded.subscribe(data=>{
+  this.toLoad=data
+})
   }
 
 
-
-reciveData(data:string){
-  console.log(data);
-  
-
-}
-  clicked(val:string){
-    console.log(val);
-    this.Name = val
-    
-  }
 }

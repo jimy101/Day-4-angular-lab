@@ -10,6 +10,9 @@
             <h6 class="card-subtitle mb-2 text-body-secondary">Available {{item.quantity }}</h6>
             <button [routerLink]="['/details',item._id]">See More</button>
             <button [routerLink]="['/edit-product',item._id]">Edit</button>
+            <button class="btn" (click)="addtowishlist(item)">
+                <i style="color: red;" class="bi bi-heart-fill"></i>
+            </button>
             <!-- <button (click)="add(item)">Add To Cart</button> -->
         </div>
     </div>

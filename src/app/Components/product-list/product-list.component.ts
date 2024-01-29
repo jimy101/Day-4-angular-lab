@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IProduct } from '../../DataTypes/product';
 import { APIResult } from '../../DataTypes/apiResault';
 import { ApiService } from '../../Services/Api.service';
+import { WishlistService } from '../../Services/wishlist.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,7 +13,7 @@ import { ApiService } from '../../Services/Api.service';
 export class ProductListComponent {
 
   list:IProduct[] =[]
-constructor(private prdAPIServ:ApiService){
+constructor(private prdAPIServ:ApiService,private wishServ:WishlistService){
   this.prdAPIServ.GetAllProducts()
   .subscribe({
     next:(response)=>{
@@ -25,6 +26,13 @@ constructor(private prdAPIServ:ApiService){
     console.log(err);
     
   }
+  })
+}
+addtowishlist(item:IProduct){
+  //
+  this.wishServ.add(item).subscribe(recponse=>{
+    console.log(recponse);
+    
   })
 }
 }

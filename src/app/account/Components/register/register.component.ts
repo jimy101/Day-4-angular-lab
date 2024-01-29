@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../Services/Api.service';
-import { IRegisterUser } from '../../DataTypes/user';
+import { ApiService } from '../../../Services/Api.service';
+import { IRegisterUser } from '../../../DataTypes/user';
 import { Router } from '@angular/router';
 
 @Component({
